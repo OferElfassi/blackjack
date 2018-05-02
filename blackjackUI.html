@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://earnmoresave.com/wp-content/uploads/2017/02/blackjack.jpg">
+    <title>BLACKJACK</title>
+    <script src="blackjack.js"></script>
+
+
+</head>
+<body>
+<img src="https://earnmoresave.com/wp-content/uploads/2017/02/blackjack.jpg" width="600" height="250" />
+<form onload="chackNdraw()">
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Player A</td>
+            <td>Player B</td>
+        </tr>
+        <tr>
+            <td id="playera">  </td>
+            <td id="playerb">  </td>
+        </tr>
+    </table>
+
+
+    <input ID="btnDraw" type="button" value="Draw" onclick="draw()" />
+<br><br>
+    <input ID="btnStay" type="button" value="Stay" onclick="stay()" />
+
+</form>
+
+</body>
+</html>
