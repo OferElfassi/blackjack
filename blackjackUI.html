@@ -9,26 +9,29 @@
 
 </head>
 <body>
-<img src="https://earnmoresave.com/wp-content/uploads/2017/02/blackjack.jpg" width="600" height="250" />
+<img src="https://earnmoresave.com/wp-content/uploads/2017/02/blackjack.jpg" width="600" height="250" alt="Blackjack picture"/>
 <form onload="chackNdraw()">
 
     <table border="1" cellpadding="10">
         <tr>
-            <td>Player A</td>
-            <td>Player B</td>
+            <th id="playera">player A</th>
+            <th id="playerb">Player B</th>
         </tr>
+
         <tr>
-            <td id="playera">  </td>
-            <td id="playerb">  </td>
+            <td id="results_a">  </td>
+            <td id="results_b">  </td>
         </tr>
     </table>
 
-
-    <input ID="btnDraw" type="button" value="Draw" onclick="draw()" />
-<br><br>
+    <input ID="btnStart" type="button" value="Start" onclick="start()"  />
+    <input ID="btnDraw" type="button" value="Draw" onclick="draw()"  />
     <input ID="btnStay" type="button" value="Stay" onclick="stay()" />
 
 </form>
 
 </body>
 </html>
+
+<!-- This is the lists of states,
+it is updated when you select a country -->
