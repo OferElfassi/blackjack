@@ -15,7 +15,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="blackjackUI.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../blackjack/blackjackUI.html">
+        <entry file="file://$PROJECT_DIR$/blackjackUI.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
@@ -24,7 +24,7 @@
         </entry>
       </file>
       <file leaf-file-name="blackjack.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../blackjack/blackjack.js">
+        <entry file="file://$PROJECT_DIR$/blackjack.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
               <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
@@ -47,8 +47,8 @@
       <list>
         <option value="$PROJECT_DIR$/blackjackUI.html" />
         <option value="$PROJECT_DIR$/blackjack.js" />
-        <option value="$PROJECT_DIR$/../blackjack/blackjackUI.html" />
-        <option value="$PROJECT_DIR$/../blackjack/blackjack.js" />
+        <option value="$PROJECT_DIR$/blackjackUI.html" />
+        <option value="$PROJECT_DIR$/blackjack.js" />
       </list>
     </option>
   </component>
@@ -61,10 +61,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="975" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -88,6 +88,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -107,7 +108,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="blackjack.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../blackjack/blackjack.js" working-dir="$PROJECT_DIR$/../blackjack" />
+    <configuration name="blackjack.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/blackjack.js" working-dir="$PROJECT_DIR$" />
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.blackjack.js" />
@@ -161,14 +162,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../blackjack/blackjackUI.html">
+    <entry file="file://$PROJECT_DIR$/blackjackUI.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../blackjack/blackjack.js">
+    <entry file="file://$PROJECT_DIR$/blackjack.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
