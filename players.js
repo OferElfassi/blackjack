@@ -1,47 +1,27 @@
+module.exports = Players;
 
-class ListItem {
-    constructor(name ) {
-        this.playerName = name ;
-        this.results =0 ;
-    }
+let Players = (function () {
 
-    getTask() {
-        return this.task;
-    }
+    var results = 0;
+     var playerID ="";
 
-    getPriority() {
-        return this.priority;
-    }
-}
-
-module.exports = ListItem;
-
-
-
-
-
-
-
-let Players = (function () { // IIFE
-    // private property
-    var privateDS = ['privateIte'];
-    var playerName =""
-
-    //constructor
     function Players(name) {
-        playerName = name;
+        playerID = name;
     }
 
-    // public method
     Players.prototype.roll= function () {
-        privateFn();
-        return privateDS;
+        results += Math.floor((Math.random() * 14) + 1);
     };
 
-    //private method
-    function privateFn() {
-        console.log('sdsdf');
-    }
+    Players.prototype.getResults= function () {
+        return results;
+    };
+    Players.prototype.zeroResults= function () {
+        results = 0;
+    };
+    Players.prototype.getID= function () {
+        return playerID ;
+    };
 
-    return MyClass;
+    return Players;
 })();
