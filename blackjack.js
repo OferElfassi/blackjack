@@ -1,6 +1,3 @@
-//const Player = require('./players');
-
-
 
 Player = (function () {
 
