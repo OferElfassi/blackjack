@@ -1,34 +1,37 @@
 //const Player = require('./players');
 
 
-let Players = (function () {
 
-    this. results = 0;
-    this. playerID ="";
-    this.Again = false;
+Player = (function () {
 
-    function Players(name) {
-        this.playerID = name;
+
+    function Players(ID) {
+        this. results = 0;
+        this. playerID = ID;
+        this.Again =  false;
     }
 
-    Players.prototype.IswantToRoll= function () {
+
+
+
+    Players.prototype.IswantToRoll = function () {
         return this.Again;
     };
-    Players.prototype.rollAgain= function (state) {
+    Players.prototype.rollAgain = function (state) {
         this.Again = state;
     };
-    Players.prototype.roll= function () {
+    Players.prototype.roll = function () {
         this.results += Math.floor((Math.random() * 14) + 1);
     };
 
-    Players.prototype.getResults= function () {
+    Players.prototype.getResults = function () {
         return this.results;
     };
-    Players.prototype.zeroResults= function () {
+    Players.prototype.zeroResults = function () {
         this.results = 0;
     };
-    Players.prototype.getID= function () {
-        return this.playerID ;
+    Players.prototype.getID = function () {
+        return this.playerID;
     };
 
     return Players;
@@ -38,68 +41,85 @@ let Players = (function () {
 
 
 
-let playerA = new Players("playera");
-let playerB =  new Players("playerb");
+let playerA = new Player("playera");
+let playerB =  new Player("playerb");
 let currentPlayer = {};
 
 
+function init() {
+    disableBtn(true,true,false,true);
+
+}
 
 
 function start() {
+    currentPlayer = choosePlayer();
+    restart();
+}
+
+
+function restart() {
     clearMarks();
-    markUser(choosePlayer());
-    document.getElementById("btnStart").disabled = true ;
-    document.getElementById("btnDraw").disabled = false ;
-    document.getElementById("btnStay").disabled = false ;
     playerA.zeroResults();
     playerB.zeroResults();
+    disableBtn(false,false,true,true);
+    markUser(currentPlayer,"green");
+}
 
+function choosePlayer() {
+    return Math.floor((Math.random() * 2) + 1) === 1 ? playerA : playerB;
 }
 
 function draw() {
-   if (currentPlayer.IswantToRoll()===false){
-       switchPlayer()
-   }
-
     currentPlayer.roll ();
     updateResults();
+    disableBtn(true,false,true,false);// draw , stay , start ,next turn
+    checkResults();
+
+}
+
+function checkResults() {
     if (currentPlayer.getResults() > 21 ){
         userLoose(currentPlayer);
-
+        return;
     }
     else if (currentPlayer.getResults() === 21){
         userLoose(otherPlayer());
+        return;
     }
-    currentPlayer.rollAgain(false);
 }
+
 
 function stay() {
-    currentPlayer.rollAgain(true);
+    disableBtn(false,true,true,true);
 }
 
-function switchPlayer(player) {
-    if (currentPlayer.getID() === playerA.getID()){
-        markUser("b");
-        currentPlayer = playerB;
-    return;
-    }
-    markUser("a");
-    currentPlayer = playerA
+function nextTurn() {
+    switchPlayer();
+    disableBtn(false,true,true,true);
 }
+
+function switchPlayer() {
+    let other = otherPlayer();
+    markUser(other,"green");
+    markUser(currentPlayer,"white")
+    currentPlayer = other ;
+}
+
  function otherPlayer() {
-     if (currentPlayer.getID() === playerA.getID()){
-         return playerB;
-     }
-     return playerA;
+     return currentPlayer.getID() === playerA.getID() ? playerB : playerA;
  }
 
-
 function userLoose(player){
-    document.getElementById(player.getID()).setAttribute("bgcolor","#7f00d4");
-    document.getElementById("btnStart").disabled = false ;
-    document.getElementById("btnDraw").disabled = true ;
-    document.getElementById("btnStay").disabled = true ;
+    markUser(player,"red");
+    disableBtn (true,true,false,true); // draw , stay , start ,next turn
 }
+
+
+
+
+
+
 
 
 function updateResults() {
@@ -107,34 +127,21 @@ function updateResults() {
     document.getElementById("results_b").innerHTML = playerB.getResults().toString();
 }
 
-
-
-function markUser(user) {
-    if (user === "a"){
-        document.getElementById("playera").setAttribute("bgcolor","#7fffd4");
-        document.getElementById("playerb").setAttribute("bgcolor","white");
-        currentPlayer = playerA;
-    }
-    else if (user === "b"){
-        document.getElementById("playerb").setAttribute("bgcolor","#7fffd4");
-        document.getElementById("playera").setAttribute("bgcolor","white");
-        currentPlayer = playerB;
-    }
+function markUser(user ,color) {
+    document.getElementById(user.getID()).setAttribute("bgcolor",color);
 }
 
 function clearMarks() {
-    document.getElementById("playerb").setAttribute("bgcolor","white");
-    document.getElementById("playera").setAttribute("bgcolor","white");
+    markUser(playerA,"white");
+    markUser(playerB,"white");
     document.getElementById("results_a").innerText = "0";
     document.getElementById("results_b").innerText = "0";
 }
 
-function choosePlayer() {
-    return Math.floor((Math.random() * 2) + 1) === 1 ? "a" : "b"
+function disableBtn (btnDraw,btnStay,btnStart,btnNextTurn){
+    document.getElementById("btnStart").disabled = btnStart ;
+    document.getElementById("btnDraw").disabled = btnDraw ;
+    document.getElementById("btnStay").disabled = btnStay ;
+    document.getElementById("btnNextTurn").disabled = btnNextTurn ;
+
 }
-
-function markWinner(player) {
-    document.getElementById("playera").setAttribute("bgcolor","white");
-}
-
-
